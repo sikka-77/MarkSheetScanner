@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/EditorTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:label="User Registeration">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,8 +24,10 @@
             android:label="New Course Code"
             android:parentActivityName=".DisplayActivity"/>
 
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".PictureActivity" />
+        <activity android:name=".LoginActivity"
+            android:label="User Login"/>
+        <activity android:name=".PictureActivity"
+            android:label="Add Picture"/>
         <activity android:name=".DisplayActivity"
             android:label="Course Codes"/>
 
