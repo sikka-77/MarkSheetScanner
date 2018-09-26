@@ -20,6 +20,10 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    /*
+            this activity is for new users to register
+     */
+
     private Button registerButton;
     private EditText memailText;
     private EditText mPasswordText;
@@ -38,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(mfirebaseAuth.getCurrentUser()!= null) {
             //user already logged in
-            //start profile activity
+            //start display activity
             Toast.makeText(this, "already logged in ", Toast.LENGTH_SHORT).show();
             finish();
             startActivity(new Intent(this,DisplayActivity.class));
@@ -84,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mprogressDialog.dismiss();
                 if(task.isSuccessful()) {
                    //user successfully registered
-                   //start profile activity
+                   //start display activity
                     Toast.makeText(MainActivity.this,"registeerd",Toast.LENGTH_SHORT).show();
                     finish();
                     startActivity(new Intent(getApplicationContext(),ProfileActivity.class));

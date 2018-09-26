@@ -17,6 +17,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ExamTypeActivity extends AppCompatActivity implements View.OnClickListener {
 
+    /*
+            this activity takes input from user fr the type of exam
+            under a course code
+     */
+
     private EditText mExamTypeText;
 
     private TextView mcourseName;

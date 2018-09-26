@@ -6,6 +6,11 @@ import android.widget.TextView;
 
 public class NewActivity {
 
+    /*
+            this java class is to save data in firebase
+            for the type of exam
+     */
+
     public String mExamTypeName;
 
     public String mExamTypeId;

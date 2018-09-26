@@ -2,6 +2,11 @@ package com.example.bhavyasikka.myfirebaseauth;
 
 public class UserInformation {
 
+    /*
+            java class for storing course code related data in firebase
+            this class will also act as a custom class for setting up list view
+     */
+
     public String courseCode;
 
     public String semester;

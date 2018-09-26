@@ -14,6 +14,10 @@ import java.util.List;
 
 public class UserAdapter extends ArrayAdapter<UserInformation> {
 
+    /*
+            array adapter class to set up list view of course codes
+     */
+
     private List<UserInformation> userList;
 
     private Activity context;

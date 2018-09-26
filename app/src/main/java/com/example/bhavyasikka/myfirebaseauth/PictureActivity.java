@@ -28,6 +28,9 @@ import java.util.Date;
 
 public class PictureActivity extends AppCompatActivity {
 
+    /*
+            this activity is for uploading a picture
+     */
     private Button mSavePhoto;
     private FirebaseAuth mfirebaseAuthP;
 
@@ -100,6 +103,7 @@ public class PictureActivity extends AppCompatActivity {
             mprogressDialog.show();
 
               //uri=data.getData();
+
                 //code to get camera image
             Bundle extras = data.getExtras();
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
@@ -112,7 +116,7 @@ public class PictureActivity extends AppCompatActivity {
             StorageReference imagesRef = mStorageReference.child("filename");
                     //+ new Date().getTime());
 
-            //upload image
+            //upload image code
 
             UploadTask uploadTask = imagesRef.putBytes(dataBAOS);
             uploadTask.addOnFailureListener(new OnFailureListener() {

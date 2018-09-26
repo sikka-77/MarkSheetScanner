@@ -115,6 +115,11 @@ public class DisplayActivity extends AppCompatActivity {
 
         mdatabaseReference=mfirebaseDatabaseInstance.getReference("Course Code,Semester and Subject").child(uniqueUserId);
 
+
+        /*
+                setting clicks on listview
+         */
+
         userListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -145,6 +150,11 @@ public class DisplayActivity extends AppCompatActivity {
             }
         });
 
+        /*
+                setting the long press on a listview item
+                which willenable the diting on a particular course code
+         */
+
         userListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -164,6 +174,7 @@ public class DisplayActivity extends AppCompatActivity {
      */
 
     private void showUpdateWindow(final String courseId, String courseName){
+
         AlertDialog.Builder dialogBuilder= new AlertDialog.Builder(DisplayActivity.this);
 
         LayoutInflater inflater=getLayoutInflater();
@@ -172,7 +183,9 @@ public class DisplayActivity extends AppCompatActivity {
 
         dialogBuilder.setView(dialogView);
 
-
+        /*
+                recieving all user entered data from the update dialog xml
+         */
 
         final EditText editTextCourse=(EditText)dialogView.findViewById(R.id.updatedCourseCode);
 
@@ -191,6 +204,10 @@ public class DisplayActivity extends AppCompatActivity {
         final AlertDialog alertDialog= dialogBuilder.create();
 
         alertDialog.show();
+
+        /*
+
+         */
 
         updateChangesButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -231,6 +248,9 @@ public class DisplayActivity extends AppCompatActivity {
 
     }
 
+            /*
+                    this method deletes  data stored in firebase
+             */
     private void deleteCourse(String del_c_id) {
 
         FirebaseUser user= mfirebaseAuthP.getCurrentUser();
@@ -250,6 +270,10 @@ public class DisplayActivity extends AppCompatActivity {
         mdatabaseReference2.removeValue();
 
     }
+
+        /*
+                this method updates data stored in firebase
+         */
 
     private boolean updateCourse(String c_id,String c_name,String sem,String subject) {
 
@@ -276,6 +300,9 @@ public class DisplayActivity extends AppCompatActivity {
         // Toast.makeText(DisplayActivity.this,"enterd on start",Toast.LENGTH_SHORT).show();
         super.onStart();
 
+        /*
+                displaying course codes in a listview after the user is logged in
+         */
         mdatabaseReference.addValueEventListener(new ValueEventListener() {
 
 

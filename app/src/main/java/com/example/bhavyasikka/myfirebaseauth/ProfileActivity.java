@@ -20,14 +20,18 @@ import com.google.firebase.storage.FileDownloadTask;
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
+    /*
+            this activity is for adding a new course code
+            by taking inputs from user
+     */
+
     private FirebaseAuth mfirebaseAuthP;
     private TextView mUsername;
     private Button mLogout;
     private Button msaveButton;
-   /* private Button mUploadButton;
-    private Button mSeeListButton;*/
+
     private EditText mCourseCode;
-    //private Button mDisplayButton;
+
     private EditText msubject;
     private EditText msemester;
     private DatabaseReference mdatabaseReference;
@@ -42,6 +46,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_profile);
 
         mfirebaseAuthP=FirebaseAuth.getInstance();
+
        /* if(mfirebaseAuthP.getCurrentUser()==null) {
             finish();
             startActivity(new Intent(this, LoginActivity.class));
