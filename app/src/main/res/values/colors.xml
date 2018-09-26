@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="background_color">#c2c2c2</color>
+    <color name="alternate_border">#4fa5d5</color>
+
+
+    <color name="editorColorPrimary">#2D3640</color>
+
+    <!-- Primary dark color for the editor -->
+    <color name="editorColorPrimaryDark">#394450</color>
+
+    <color name="yellow">#EEFF41</color>
+
+    <color name="circle_color">#26C6DA</color>
+
+    <color name="button_color">#26A69A</color>
+</resources>

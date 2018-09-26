@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bhavyasikka.myfirebaseauth">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/EditorTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ProfileActivity"
+            android:label="New Course Code"
+            android:parentActivityName=".DisplayActivity"/>
+
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".PictureActivity" />
+        <activity android:name=".DisplayActivity"
+            android:label="Course Codes"/>
+
+
+
+        <activity android:name=".ExamActivity"
+            android:label="Exams"
+            android:parentActivityName=".DisplayActivity">
+
+
+
+        </activity>
+
+        <activity android:name=".ExamTypeActivity"
+            android:label="ExamEditor"
+            />
+    </application>
+
+</manifest>
