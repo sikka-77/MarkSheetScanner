@@ -27,6 +27,18 @@
         android:textColor="@color/editorColorPrimaryDark"
         android:id="@+id/examsName"/>
 
+
+
+    <ListView
+        android:id="@+id/listOfMarks"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_height="match_parent">
+
+    </ListView>
+
+
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,7 +47,7 @@
         android:layout_marginBottom="12dp"
         android:layout_marginRight="8dp"
         android:id="@+id/savePhoto"
-        android:src="@drawable/plus_icon"/>
+        android:src="@drawable/camera_icon"/>
 
         <!--
         <ImageView

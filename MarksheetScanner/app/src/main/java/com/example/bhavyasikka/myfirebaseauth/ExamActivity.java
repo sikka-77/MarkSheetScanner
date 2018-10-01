@@ -24,12 +24,6 @@ import java.util.List;
 
 public class ExamActivity extends AppCompatActivity {
 
-    /*
-            this activity starts when a particular course code is clicked from listview
-            this activity displays the list of all exam types created by user under a
-            particular course code
-     */
-
     List<NewActivity> userList;
     private FirebaseAuth mfirebaseAuthP;
     private DatabaseReference mdatabaseReference;
@@ -37,20 +31,8 @@ public class ExamActivity extends AppCompatActivity {
     TextView mCourseNametoShow;
     ListView userListView;
 
-    /*
-            the first two id's are the same id's that were sent by the diplay activity
-            these are renamed here for sending them via itent to exam type activity
-            in exam type activity thes can't be taken via intent of display activity
-            so we have to send them with the intent of this activity
-            and so they are given a new name
-     */
     public static final String NEWCOURSECODEID="courseidnew";
     public static final String NEW_COURSE_CODE_NAME="courseCodeNamenew";
-
-    /*
-            these two id's are created to send to  the picture activity to store a picture under that paritcukar exam
-            these are id's of exam type(end sem,sessional) created by the user
-     */
     public static final String EXAM_ID="newExamId";
     public static final String EXAM_NAME="newExamName";
 
@@ -67,10 +49,6 @@ public class ExamActivity extends AppCompatActivity {
 
         userList= new ArrayList<>();
 
-            /*
-                    the id's are recieved that were sent via intent from display activty
-                    to relate the exam types to its particular course code
-             */
         Intent intent=getIntent();
         final String mCourseidentity=intent.getStringExtra(DisplayActivity.COURSE_CODE_ID);
         final String mCourseNames=intent.getStringExtra(DisplayActivity.COURSE_CODE_NAME);
@@ -88,12 +66,6 @@ public class ExamActivity extends AppCompatActivity {
             public void onClick(View view) {
                  Intent examintent = new Intent(getApplicationContext(),ExamTypeActivity.class);
 
-                 /*
-                        renamed id's sent here
-                        as the intent is from this actvity to exam type activity
-                        so the id's should be of this activity
-                        so new one's are created
-                  */
                  examintent.putExtra(NEWCOURSECODEID,mCourseidentity);
                  examintent.putExtra(NEW_COURSE_CODE_NAME,mCourseNames);
 
@@ -110,10 +82,6 @@ public class ExamActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 NewActivity currentExam= userList.get(i);
-
-                /*
-                    id's being sent to picture activity to relate data
-                 */
 
                 Intent intent=new Intent(getApplicationContext(),PictureActivity.class);
 
@@ -133,10 +101,6 @@ public class ExamActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
-        /*
-                this will display list of all exam types uner a course code
-         */
 
         mdatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override

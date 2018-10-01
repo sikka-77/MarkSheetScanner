@@ -11,10 +11,6 @@ import java.util.List;
 
 public class UserAdapterExamActivity extends ArrayAdapter<NewActivity> {
 
-    /*
-            array adapter classs to set up a listview of exam types
-     */
-
     private List<NewActivity> userList;
 
     private Activity context;

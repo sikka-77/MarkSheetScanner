@@ -19,10 +19,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    /*
-            this activity is for existing users to login
-     */
-
     private Button signInButtonL;
     private EditText memailTextL;
     private EditText mPasswordTextL;
@@ -40,7 +36,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
       if(mfirebaseAuthL.getCurrentUser()!= null) {
             //user already logged in
-            //start display activity
+            //start profile activity
             finish();
             startActivity(new Intent(this,DisplayActivity.class));
 
@@ -85,7 +81,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         mprogressDialogL.dismiss();
 
                         if(task.isSuccessful()) {
-                            //start display activity
+                            //start profile activity
                             finish();
                             startActivity(new Intent(getApplicationContext(),DisplayActivity.class));
                         }

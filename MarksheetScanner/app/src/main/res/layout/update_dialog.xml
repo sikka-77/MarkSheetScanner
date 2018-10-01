@@ -40,13 +40,15 @@
             android:textAlignment="center"
             android:text="Save Changes >"
             android:id="@+id/saveChangesButton"
-            android:background="@color/button_color"/>
+            android:background="@drawable/rounded_edge_bittons"
+            android:textColor="@color/button_text"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:background="@color/button_color"
+            android:background="@drawable/rounded_edge_bittons"
+            android:textColor="@color/button_text"
             android:text="Delete Entry >"
             android:id="@+id/deleteCourse"/>
 

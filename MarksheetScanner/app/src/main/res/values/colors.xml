@@ -17,4 +17,6 @@
     <color name="circle_color">#26C6DA</color>
 
     <color name="button_color">#26A69A</color>
+
+    <color name="button_text">#E3F2FD</color>
 </resources>

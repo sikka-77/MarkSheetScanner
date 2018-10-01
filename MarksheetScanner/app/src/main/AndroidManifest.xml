@@ -12,8 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/EditorTheme">
-        <activity android:name=".MainActivity"
-            android:label="User Registeration">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +24,7 @@
             android:parentActivityName=".DisplayActivity"/>
 
         <activity android:name=".LoginActivity"
-            android:label="User Login"/>
+            android:label="Log In"/>
         <activity android:name=".PictureActivity"
             android:label="Add Picture"/>
         <activity android:name=".DisplayActivity"

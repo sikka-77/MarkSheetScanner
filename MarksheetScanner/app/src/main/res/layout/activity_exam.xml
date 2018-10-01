@@ -20,13 +20,13 @@
 
 
     <ListView
-        android:id="@+id/listOfExam"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_marginTop="50dp"
-        android:layout_height="match_parent">
+    android:id="@+id/listOfExam"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_marginTop="50dp"
+    android:layout_height="match_parent">
 
-    </ListView>
+</ListView>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab2"
