@@ -3,67 +3,72 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-<LinearLayout
-    android:layout_width="match_parent"
-    android:orientation="horizontal"
-    android:layout_marginTop="10dp"
+    android:layout_height="match_parent">
 
-    android:layout_marginLeft="10dp"
-    android:layout_height="70dp">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="#454545"
+        app:cardCornerRadius="16dp">
 
-
-        <TextView
-            android:layout_width="36dp"
-
-            android:background="@drawable/semesterbackground"
-
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="1"
-            android:gravity="center"
-            android:textStyle="bold"
-
-            android:textSize="20sp"
-            android:id="@+id/Semester"
-            android:layout_margin="10dp"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="8dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/Semester"
-        android:orientation="vertical"
-        android:layout_weight="5"
-        android:layout_height="wrap_content">
+            android:layout_margin="8dp"
+            android:orientation="horizontal">
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:layout_height="0dp"
+            <TextView
+                android:id="@+id/Semester"
 
-            android:id="@+id/coursecode"
-            android:gravity="bottom"
-            android:textSize="15sp"
-            android:layout_marginLeft="10dp"
-            tools:text="16"/>
+                android:layout_width="36dp"
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-           android:gravity="bottom"
-            android:layout_height="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/semesterbackground"
+                android:gravity="center"
 
-            android:layout_marginLeft="10dp"
-            android:id="@+id/subject"
-            tools:text="java"
-            />
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="1" />
 
-    </LinearLayout>
-</LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@+id/Semester"
+                android:layout_weight="5"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/coursecode"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="16" />
+
+                <TextView
+                    android:id="@+id/subject"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:textColor="#ffffff"
+                    tools:text="java" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 
 </RelativeLayout>

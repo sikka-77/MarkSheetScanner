@@ -7,7 +7,7 @@
     <color name="alternate_border">#4fa5d5</color>
 
 
-    <color name="editorColorPrimary">#2D3640</color>
+    <color name="editorColorPrimary">#2cb6f6</color>
 
     <!-- Primary dark color for the editor -->
     <color name="editorColorPrimaryDark">#394450</color>

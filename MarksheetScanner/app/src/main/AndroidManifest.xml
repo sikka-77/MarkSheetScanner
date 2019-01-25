@@ -26,9 +26,10 @@
         <activity android:name=".MainActivity"
             android:label="Sign Up" />
         <activity android:name=".PictureActivity"
-            android:label="Add Picture"/>
+            android:label="Students"
+            android:parentActivityName=".ExamActivity"/>
         <activity android:name=".DisplayActivity"
-            android:label="Course Codes"/>
+            android:label="Subjects"/>
 
 
 
