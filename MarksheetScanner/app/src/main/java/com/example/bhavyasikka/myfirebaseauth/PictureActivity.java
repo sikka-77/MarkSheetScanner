@@ -51,6 +51,7 @@ public class PictureActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        assert getSupportActionBar()!=null;
         setContentView(R.layout.activity_picture);
 
 
