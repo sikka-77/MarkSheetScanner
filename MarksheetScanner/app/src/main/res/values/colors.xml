@@ -7,16 +7,16 @@
     <color name="alternate_border">#4fa5d5</color>
 
 
-    <color name="editorColorPrimary">#2D3640</color>
+    <color name="editorColorPrimary">#2cb6f6</color>
 
     <!-- Primary dark color for the editor -->
     <color name="editorColorPrimaryDark">#394450</color>
 
     <color name="yellow">#EEFF41</color>
 
-    <color name="circle_color">#26C6DA</color>
+    <color name="circle_color">#2cb6f6</color>
 
-    <color name="button_color">#26A69A</color>
+    <color name="button_color">#2cb6f6</color>
 
     <color name="button_text">#E3F2FD</color>
 </resources>

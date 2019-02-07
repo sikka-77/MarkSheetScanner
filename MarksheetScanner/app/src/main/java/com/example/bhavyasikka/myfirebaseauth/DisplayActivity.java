@@ -105,11 +105,11 @@ public class DisplayActivity extends AppCompatActivity {
         });
 
         /*
-                setting the reference of the databse variable
+                setting the reference of the database variable
                 the data under this reference will be retrieved from firebase
                 here reference is set to Course Code,Semester and Subject and
                 in it to the user id that we got above
-                This will set refernce to the particular user and course codes created by that
+                This will set reference to the particular user and course codes created by that
                 user will be displayed
          */
 

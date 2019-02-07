@@ -5,44 +5,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background1"
     tools:context=".ExamActivity">
 
 
     <TextView
+        android:id="@+id/setCourseName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp"
         android:textAlignment="center"
-        android:id="@+id/setCourseName"
-        android:textStyle="bold"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:layout_alignParentTop="true"/>
+        android:textStyle="bold" />
 
 
     <ListView
-    android:id="@+id/listOfExam"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_marginTop="50dp"
-    android:layout_height="match_parent">
+        android:id="@+id/listOfExam"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/setCourseName"
+        android:orientation="vertical">
 
-</ListView>
+    </ListView>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:backgroundTint="@color/button_color"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="12dp"
-        android:layout_marginRight="8dp"
-        android:src="@drawable/add_icon">
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/add_icon"
+        android:tint="#ffffff"
+        app:backgroundTint="#2cb6f6">
 
     </android.support.design.widget.FloatingActionButton>
-
-
-
 
 
 

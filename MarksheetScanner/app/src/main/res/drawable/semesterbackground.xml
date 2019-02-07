@@ -2,7 +2,10 @@
 <!-- Background circle for the magnitude value -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval">
-    <solid android:color="#26C6DA" />
+    <gradient
+        android:startColor="#2cb6f6"
+        android:endColor="#a2b0b3"
+        android:angle="45" />
     <size
         android:width="36dp"
         android:height="36dp" />

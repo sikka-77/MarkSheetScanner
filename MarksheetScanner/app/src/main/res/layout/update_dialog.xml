@@ -1,57 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
-    <LinearLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="12dp">
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="#454545"
+        app:cardCornerRadius="16dp">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:hint="eg.CS1227"
-            android:id="@+id/updatedCourseCode"/>
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:hint="eg.1st"
-            android:id="@+id/updatedSemester"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:hint="eg.Java"
-            android:id="@+id/updatedSubject"/>
+            android:orientation="vertical">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:textAlignment="center"
-            android:text="Save Changes >"
-            android:id="@+id/saveChangesButton"
-            android:background="@drawable/rounded_edge_bittons"
-            android:textColor="@color/button_text"/>
+            <EditText
+                android:id="@+id/updatedCourseCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="16dp"
+                android:hint="eg.CS1227" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:background="@drawable/rounded_edge_bittons"
-            android:textColor="@color/button_text"
-            android:text="Delete Entry >"
-            android:id="@+id/deleteCourse"/>
+            <EditText
+                android:id="@+id/updatedSemester"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="eg.1st" />
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/updatedSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="eg.Java" />
 
-</android.support.constraint.ConstraintLayout>
+            <Button
+                android:id="@+id/saveChangesButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/rounded_edge_bittons"
+                android:text="Save Changes >"
+                android:textAlignment="center"
+                android:textColor="@color/button_text" />
+
+            <Button
+                android:id="@+id/deleteCourse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/rounded_edge_bittons"
+                android:text="Delete Entry >"
+                android:textColor="@color/button_text" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

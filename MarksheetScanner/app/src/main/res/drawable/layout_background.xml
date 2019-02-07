@@ -9,7 +9,10 @@
         android:topLeftRadius="30dp"
         android:topRightRadius="30dp" />
 
-    <solid android:color="@color/button_color" />
+    <gradient
+        android:startColor="#2cb6f6"
+        android:endColor="#a2b0b3"
+        android:angle="45" />
 
     <padding
         android:bottom="0dp"
