@@ -44,7 +44,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
 
         mfirebaseAuthL=FirebaseAuth.getInstance();
 
-      if(mfirebaseAuthL.getCurrentUser()!= null) {
+        if(mfirebaseAuthL.getCurrentUser() != null) {
             //user already logged in
             //start profile activity
             finish();
