@@ -37,8 +37,14 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -70,6 +76,8 @@ public class PictureActivity extends AppCompatActivity {
 
     private ProgressDialog mprogressDialog;
 
+    private Context mContext;
+
     private static final int CAMERA_REQUEST_CODE=1;
 
     @Override
@@ -78,6 +86,8 @@ public class PictureActivity extends AppCompatActivity {
 
         assert getSupportActionBar()!=null;
         setContentView(R.layout.activity_picture);
+
+        mContext = this;
 
 
        /* ArrayList<MarksModel> marks_list = new ArrayList<MarksModel>();
@@ -103,7 +113,7 @@ public class PictureActivity extends AppCompatActivity {
         FirebaseUser user= mfirebaseAuthP.getCurrentUser();
         String uniqueUserId=user.getUid();
 
-        mExamsName=(TextView)findViewById(R.id.examsName);
+        mExamsName =(TextView)findViewById(R.id.examsName);
 
 
 
@@ -233,11 +243,11 @@ public class PictureActivity extends AppCompatActivity {
             CropImage.activity(photoUri)
                     .setGuidelines(CropImageView.Guidelines.ON)
                     .setInitialCropWindowPaddingRatio(0)
-                    .setAspectRatio(1, 1)
-                    .setFixAspectRatio(true)
-                    .setMaxZoom(0)
-                    .setMinCropResultSize(512,512)
-                    .setMaxCropResultSize(2096,2096)
+                    //.setAspectRatio(1, 1)
+                    //.setFixAspectRatio(true)
+                    //.setMaxZoom(0)
+                    //.setMinCropResultSize(512,512)
+                    //.setMaxCropResultSize(2608,2608)
                     .start(this);
 
         } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
@@ -257,9 +267,14 @@ public class PictureActivity extends AppCompatActivity {
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         Toast.makeText(getApplicationContext(), "File Uploaded Successfully...", Toast.LENGTH_LONG).show();
                         try {
-                            Log.d("RESPONSE", response.body().string());
-
+                            assert response.body() != null;
+                            Intent resultIntent = new Intent(mContext, ResultActivity.class);
+                            resultIntent.putExtra("result", (new JSONObject(response.body().string()).getJSONArray("result")).toString());
+                            startActivity(resultIntent);
+                            finish();
                         } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
