@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.bhavyasikka.myfirebaseauth">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -18,7 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:usesCleartextTraffic="true"
         android:supportsRtl="true"
-        android:theme="@style/EditorTheme">
+        android:theme="@style/EditorTheme"
+        tools:ignore="GoogleAppIndexingWarning">
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -27,7 +29,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths"/>
         </provider>
 
         <activity android:name=".LoginActivity">
@@ -49,19 +51,17 @@
         <activity android:name=".DisplayActivity"
             android:label="Subjects"/>
 
-
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"/>
 
         <activity android:name=".ExamActivity"
             android:label="Exams"
-            android:parentActivityName=".DisplayActivity">
+            android:parentActivityName=".DisplayActivity"/>
 
-
-
-        </activity>
 
         <activity android:name=".ExamTypeActivity"
             android:label="ExamEditor"
             />
+
     </application>
 
 </manifest>

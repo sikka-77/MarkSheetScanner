@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.Rect;
 import android.icu.text.SimpleDateFormat;
 import android.net.Uri;
 import android.os.Debug;
@@ -36,6 +37,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -61,7 +64,7 @@ public class PictureActivity extends AppCompatActivity {
 
     TextView mExamsName;
 
-    private Uri uri;
+    private Uri photoUri;
 
     private StorageReference mStorageReference;
 
@@ -201,10 +204,10 @@ public class PictureActivity extends AppCompatActivity {
                     }
                     // Continue only if the File was successfully created
                     if (photoFile != null) {
-                        Uri photoURI = FileProvider.getUriForFile(this,
+                        photoUri = FileProvider.getUriForFile(this,
                                 "com.example.android.fileprovider",
                                 photoFile);
-                        intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                        intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
                         startActivityForResult(intent, CAMERA_REQUEST_CODE);
                     }
                 }
@@ -227,42 +230,59 @@ public class PictureActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
+            CropImage.activity(photoUri)
+                    .setGuidelines(CropImageView.Guidelines.ON)
+                    .setInitialCropWindowPaddingRatio(0)
+                    .setAspectRatio(1, 1)
+                    .setFixAspectRatio(true)
+                    .setMaxZoom(0)
+                    .setMinCropResultSize(512,512)
+                    .setMaxCropResultSize(2096,2096)
+                    .start(this);
 
-            File imageFile = new File(currentPhotoPath);
+        } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            if (resultCode == RESULT_OK) {
 
-            RequestBody reuqestFile = RequestBody.create(MediaType.parse("multipart/form-data"), imageFile);
+                File imageFile = new File(result.getUri().getPath());
 
-            MultipartBody.Part body = MultipartBody.Part.createFormData("upload", imageFile.getName(), reuqestFile);
+                RequestBody reuqestFile = RequestBody.create(MediaType.parse("multipart/form-data"), imageFile);
 
-            Call<ResponseBody> call = Api.Service().submitResult(body, reuqestFile);
+                MultipartBody.Part body = MultipartBody.Part.createFormData("upload", imageFile.getName(), reuqestFile);
 
-            call.enqueue(new Callback<ResponseBody>() {
-                @Override
-                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                    Toast.makeText(getApplicationContext(), "File Uploaded Successfully...", Toast.LENGTH_LONG).show();
-                }
+                Call<ResponseBody> call = Api.Service().submitResult(body, reuqestFile);
 
-                @Override
-                public void onFailure(Call<ResponseBody> call, Throwable t) {
-                    Log.e("NETWORK STATE", "Ohh Noo!!!");
-                    t.printStackTrace();
-                }
-            });
+                call.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        Toast.makeText(getApplicationContext(), "File Uploaded Successfully...", Toast.LENGTH_LONG).show();
+                        try {
+                            Log.d("RESPONSE", response.body().string());
+
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Log.e("NETWORK STATE", "Ohh Noo!!!");
+                        t.printStackTrace();
+                    }
+                });
+            }
         }
     }
 
-    String currentPhotoPath;
     private File createImageFile(String imageFileName) throws IOException {
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         imageFileName += "_";
-        File image = File.createTempFile(
+
+        // Save a file: path for use with ACTION_VIEW intents
+        return File.createTempFile(
                 imageFileName,  /* prefix */
                 ".jpg",         /* suffix */
                 storageDir      /* directory */
         );
-
-        // Save a file: path for use with ACTION_VIEW intents
-        currentPhotoPath = image.getAbsolutePath();
-        return image;
     }
 }
