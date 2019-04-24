@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:cardBackgroundColor="#454545"
+        app:cardBackgroundColor="#DCDCDC"
         app:cardCornerRadius="16dp">
 
         <LinearLayout
@@ -52,7 +52,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_weight="1"
                     android:gravity="bottom"
-                    android:textColor="#ffffff"
+                    android:textColor="#000000"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     tools:text="16" />
@@ -64,7 +64,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_weight="1"
                     android:gravity="bottom"
-                    android:textColor="#ffffff"
+                    android:textColor="#000000"
                     tools:text="java" />
 
             </LinearLayout>

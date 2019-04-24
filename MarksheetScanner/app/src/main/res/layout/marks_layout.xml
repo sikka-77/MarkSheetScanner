@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:cardBackgroundColor="#454545"
+        app:cardBackgroundColor="#DCDCDC"
         app:cardCornerRadius="16dp">
 
         <LinearLayout
@@ -42,7 +42,7 @@
                 android:layout_weight="3"
                 android:gravity="bottom"
                 tools:text="sessional"
-                android:textColor="#ffffff"
+                android:textColor="#000000"
                 android:textSize="16sp"/>
 
         </LinearLayout>
