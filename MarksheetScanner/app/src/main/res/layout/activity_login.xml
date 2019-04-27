@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="32dp"
-            android:text="MARKSHEET READER"
+            android:text="M-DIGITIZER"
             android:textAlignment="center"
             android:textColor="#ffffff"
             android:textSize="28sp"
@@ -72,7 +72,7 @@
                         android:drawableStart="@drawable/baseline_email_black_18dp"
                         android:hint="Email"
                         android:inputType="textEmailAddress"
-                        android:textColor="#ffffff"
+                        android:textColor="#222222"
                         android:textCursorDrawable="@drawable/black_cursor" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -91,7 +91,7 @@
                         android:drawableStart="@drawable/baseline_lock_black_18dp"
                         android:hint="Password"
                         android:inputType="textPassword"
-                        android:textColor="#ffffff"
+                        android:textColor="#222222"
                         android:textCursorDrawable="@drawable/black_cursor" />
                 </android.support.design.widget.TextInputLayout>
 
